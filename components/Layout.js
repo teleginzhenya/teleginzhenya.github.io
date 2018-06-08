@@ -1,6 +1,19 @@
 import React from "react";
 import Head from "next/head";
 import PropTypes from "prop-types";
+import styled, { ThemeProvider } from "styled-components";
+
+import theme from "../static/theme";
+
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ChildrenContainer = styled.div`
+  max-width: 800px;
+`;
 
 const Layout = ({ children, title }) => (
   <div>
@@ -8,8 +21,16 @@ const Layout = ({ children, title }) => (
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link
+        href="https://fonts.googleapis.com/css?family=Ubuntu+Mono"
+        rel="stylesheet"
+      />
     </Head>
-    {children}
+    <ThemeProvider theme={theme.day}>
+      <PageContainer>
+        <ChildrenContainer>{children}</ChildrenContainer>
+      </PageContainer>
+    </ThemeProvider>
   </div>
 );
 
@@ -19,7 +40,7 @@ Layout.propTypes = {
 };
 
 Layout.defaultProps = {
-  title: "This is the default title"
+  title: "teleginzhenya.github.io"
 };
 
 export default Layout;
