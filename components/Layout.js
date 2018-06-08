@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import styled, { ThemeProvider } from "styled-components";
 
 import theme from "../static/theme";
+import TypewriterContainer from "../containers/TypewriterContainer";
 
 const PageContainer = styled.div`
   display: flex;
@@ -28,7 +29,10 @@ const Layout = ({ children, title }) => (
     </Head>
     <ThemeProvider theme={theme.day}>
       <PageContainer>
-        <ChildrenContainer>{children}</ChildrenContainer>
+        <ChildrenContainer>
+          <TypewriterContainer />
+          {children}
+        </ChildrenContainer>
       </PageContainer>
     </ThemeProvider>
   </div>
