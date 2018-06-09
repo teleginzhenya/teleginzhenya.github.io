@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 import theme from "../static/theme";
 import TypewriterContainer from "../containers/TypewriterContainer";
+import { isDarkMode } from "../utils/isDarkMode";
 
 const PageContainer = styled.div`
   display: flex;
@@ -13,7 +14,12 @@ const PageContainer = styled.div`
 `;
 
 const ChildrenContainer = styled.div`
-  max-width: 800px;
+  max-width: 640px;
+  margin: 0 2em;
+`;
+
+const HeaderContainer = styled.div`
+  margin-bottom: 3em;
 `;
 
 const Layout = ({ children, title }) => (
@@ -27,10 +33,21 @@ const Layout = ({ children, title }) => (
         rel="stylesheet"
       />
     </Head>
-    <ThemeProvider theme={theme.day}>
+    <style jsx global>
+      {`
+        body {
+          background: ${isDarkMode()
+            ? theme.dark.colors.backgroundColor
+            : theme.day.colors.backgroundColor};
+        }
+      `}
+    </style>
+    <ThemeProvider theme={isDarkMode() ? theme.dark : theme.day}>
       <PageContainer>
         <ChildrenContainer>
-          <TypewriterContainer />
+          <HeaderContainer>
+            <TypewriterContainer />
+          </HeaderContainer>
           {children}
         </ChildrenContainer>
       </PageContainer>
