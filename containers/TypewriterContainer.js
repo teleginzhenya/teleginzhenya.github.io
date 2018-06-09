@@ -23,6 +23,11 @@ const CONTENT = [
     text: "evgeniytelegin",
     link: "https://www.linkedin.com/in/evgeniytelegin/"
   },
+  {
+    icon: ["fab", "telegram"],
+    text: "@zhenyatelegin",
+    link: "http://telegram.me/zhenyatelegin"
+  },
   { icon: ["fas", "envelope"], text: "telegin.zhenya@gmail.com" }
 ];
 
