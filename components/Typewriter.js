@@ -10,8 +10,7 @@ const LogoContainer = styled.div`
   font-family: ${props => props.theme.font};
   font-size: 2em;
   font-weight: bold;
-
-  margin: 16px 0 16px -16px;
+  margin: 1em 0;
 `;
 
 const LogoLink = styled.a`
@@ -21,9 +20,9 @@ const LogoLink = styled.a`
 const GradientHighlight = styled.span`
   color: ${props => props.theme.colors.white};
   background-image: ${props => props.theme.colors.gradient};
-
-  border-radius: 3px;
-  padding: 8px 16px;
+  border: 0.025em solid ${props => props.theme.colors.gradientSecond};
+  border-radius: 0.1em;
+  padding: 0.4em 0.8em;
 `;
 
 const blinkAnimation = keyframes`
@@ -38,7 +37,7 @@ const Blink = styled.span`
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  margin-right: 8px;
+  margin-right: 0.4em;
 `;
 
 fontawesome.library.add(brands, solid);
