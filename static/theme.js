@@ -4,7 +4,7 @@ const theme = {
   day: {
     font: "'Ubuntu Mono', monospace",
     colors: {
-      backgroundColor: "#fffffff",
+      backgroundColor: "#ffffff",
       white: "#ffffff",
       grey: "#8c8c8c",
 
