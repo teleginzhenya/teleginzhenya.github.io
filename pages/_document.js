@@ -41,6 +41,14 @@ export default class MyDocument extends Document {
               }
             `}
           </style>
+          <style
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `
+                body { font-family: ${theme.font}; }
+              `
+            }}
+          />
         </Head>
         <body>
           <Main />
