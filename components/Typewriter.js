@@ -7,7 +7,6 @@ import brands from "@fortawesome/fontawesome-free-brands";
 import solid from "@fortawesome/fontawesome-free-solid";
 
 const LogoContainer = styled.div`
-  font-family: ${props => props.theme.font};
   font-size: 2em;
   font-weight: bold;
   margin: 1em 0;
