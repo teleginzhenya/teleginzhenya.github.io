@@ -6,11 +6,7 @@ import fontawesome from "@fortawesome/fontawesome";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import solid from "@fortawesome/fontawesome-free-solid";
 
-const MarkdownContainer = styled.div`
-  font-family: ${props => props.theme.font};
-`;
-
-const StyledMarkdownStyles = styled(ReactMarkdown)`
+const MarkdownStyles = styled(ReactMarkdown)`
   h1,
   h2,
   h3,
@@ -100,13 +96,11 @@ HeadingRenderer.propTypes = {
 };
 
 const Markdown = ({ markdown }) => (
-  <MarkdownContainer>
-    <StyledMarkdownStyles
-      source={markdown}
-      escapeHtml={false}
-      renderers={{ heading: HeadingRenderer }}
-    />
-  </MarkdownContainer>
+  <MarkdownStyles
+    source={markdown}
+    escapeHtml={false}
+    renderers={{ heading: HeadingRenderer }}
+  />
 );
 
 Markdown.propTypes = {
