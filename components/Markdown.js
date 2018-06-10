@@ -7,14 +7,12 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import solid from "@fortawesome/fontawesome-free-solid";
 
 const MarkdownStyles = styled(ReactMarkdown)`
-  h1,
   h2,
   h3,
   h4 {
     position: relative;
     color: ${props => props.theme.colors.primaryColor};
     font-weight: bold;
-
     :hover > a {
       opacity: 1;
     }
@@ -28,7 +26,9 @@ const MarkdownStyles = styled(ReactMarkdown)`
     }
   }
 
-  h3 {
+  h3,
+  p,
+  ul {
     color: ${props => props.theme.colors.fontColor};
   }
 
@@ -36,13 +36,8 @@ const MarkdownStyles = styled(ReactMarkdown)`
     color: ${props => props.theme.colors.grey};
   }
 
-  p {
-    color: ${props => props.theme.colors.fontColor};
-  }
-
   ul {
     padding-left: 1em;
-    color: ${props => props.theme.colors.fontColor};
     li {
       line-height: 150%;
       margin-top: 0.5em;
@@ -56,7 +51,6 @@ const MarkdownStyles = styled(ReactMarkdown)`
     padding: 0.2em 0.5em;
     color: ${props => props.theme.colors.white};
     background-image: ${props => props.theme.colors.gradient};
-
     border-radius: 0.2em;
   }
 
