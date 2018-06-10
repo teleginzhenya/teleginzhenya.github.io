@@ -26,22 +26,7 @@ const Layout = ({ children, title }) => (
   <div>
     <Head>
       <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <link
-        href="https://fonts.googleapis.com/css?family=Ubuntu+Mono"
-        rel="stylesheet"
-      />
     </Head>
-    <style jsx global>
-      {`
-        body {
-          background: ${isDarkMode()
-            ? theme.dark.colors.backgroundColor
-            : theme.day.colors.backgroundColor};
-        }
-      `}
-    </style>
     <ThemeProvider theme={isDarkMode() ? theme.dark : theme.day}>
       <PageContainer>
         <ChildrenContainer>
