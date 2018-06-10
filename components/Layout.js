@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 import theme from "../static/theme";
 import TypewriterContainer from "../containers/TypewriterContainer";
+import Footer from "../components/Footer";
 import { isDarkMode } from "../utils/isDarkMode";
 
 const PageContainer = styled.div`
@@ -34,6 +35,7 @@ const Layout = ({ children, title }) => (
             <TypewriterContainer />
           </HeaderContainer>
           {children}
+          <Footer />
         </ChildrenContainer>
       </PageContainer>
     </ThemeProvider>
