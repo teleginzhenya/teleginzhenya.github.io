@@ -1,8 +1,8 @@
 import { blendColors } from "../utils/blendColors";
 
 const theme = {
+  font: "'Ubuntu Mono', monospace",
   day: {
-    font: "'Ubuntu Mono', monospace",
     colors: {
       backgroundColor: "#ffffff",
       white: "#ffffff",
@@ -17,7 +17,6 @@ const theme = {
     }
   },
   dark: {
-    font: "'Ubuntu Mono', monospace",
     colors: {
       backgroundColor: "#292b36",
       white: "#ffffff",
