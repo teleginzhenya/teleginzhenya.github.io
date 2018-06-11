@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Typewriter from "../components/Typewriter";
+import { logEvent } from "../utils/analytics";
 
 const DELAY_BETWEEN_SYMBOLS = 100;
 const DELAY_BETWEEN_WORDS = 2000;
@@ -113,8 +114,12 @@ class LogoContainer extends Component {
     }, DELAY_BETWEEN_BACKSPACE);
   };
 
+  handleClick = link => {
+    logEvent("headerClick", link);
+  };
+
   render() {
-    return <Typewriter {...this.state} />;
+    return <Typewriter {...this.state} onClick={this.handleClick} />;
   }
 }
 
