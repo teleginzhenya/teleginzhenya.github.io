@@ -5,6 +5,7 @@ import faHeart from "@fortawesome/fontawesome-free-solid/faHeart";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
+  color: ${props => props.theme.colors.fontColor};
   margin: 2.5em 0;
 `;
 
