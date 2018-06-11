@@ -4,7 +4,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "deploy": "./deploy.sh"
   },
   "version": "1.0.0",
   "description": "My personal Homepage",
