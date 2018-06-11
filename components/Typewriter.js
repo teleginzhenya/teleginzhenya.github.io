@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 import fontawesome from "@fortawesome/fontawesome";
@@ -41,28 +41,44 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 
 fontawesome.library.add(brands, solid);
 
-const Typewriter = ({ currentIcon, currentLink, currentText }) => (
-  <LogoContainer>
-    <LogoLink href={currentLink}>
-      <GradientHighlight>
-        {currentIcon && <StyledFontAwesomeIcon icon={currentIcon} size="xs" />}
-        {currentText}
-        <Blink>_</Blink>
-      </GradientHighlight>
-    </LogoLink>
-  </LogoContainer>
-);
+class Typewriter extends Component {
+  handleClick = currentLink => {
+    this.props.onClick(currentLink);
+  };
+
+  render() {
+    const { currentIcon, currentLink, currentText } = this.props;
+    return (
+      <LogoContainer>
+        <LogoLink
+          href={currentLink}
+          onClick={() => this.handleClick(currentLink)}
+        >
+          <GradientHighlight>
+            {currentIcon && (
+              <StyledFontAwesomeIcon icon={currentIcon} size="xs" />
+            )}
+            {currentText}
+            <Blink>_</Blink>
+          </GradientHighlight>
+        </LogoLink>
+      </LogoContainer>
+    );
+  }
+}
 
 Typewriter.propTypes = {
   currentIcon: PropTypes.arrayOf(PropTypes.string),
   currentLink: PropTypes.string,
-  currentText: PropTypes.string
+  currentText: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 Typewriter.defaultProps = {
   currentIcon: null,
   currentLink: null,
-  currentText: null
+  currentText: null,
+  onClick: () => {}
 };
 
 export default Typewriter;
