@@ -25,13 +25,20 @@ const HeaderContainer = styled.div`
 `;
 
 class Layout extends Component {
+  state = { isDarkMode: false };
+
+  componentWillMount() {
+    console.log("isDarkMode:", isDarkMode());
+    this.setState({ isDarkMode: isDarkMode() });
+  }
+
   componentDidMount() {
     if (!window.GA_INITIALIZED) {
       initGA();
       window.GA_INITIALIZED = true;
     }
-    console.log("isDarkMode:", isDarkMode());
   }
+
   render() {
     const { children, title } = this.props;
     return (
@@ -39,7 +46,7 @@ class Layout extends Component {
         <Head>
           <title>{title}</title>
         </Head>
-        <ThemeProvider theme={isDarkMode() ? theme.dark : theme.day}>
+        <ThemeProvider theme={this.state.isDarkMode ? theme.dark : theme.day}>
           <PageContainer>
             <ChildrenContainer>
               <HeaderContainer>
