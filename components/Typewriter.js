@@ -19,7 +19,6 @@ const LogoLink = styled.a`
 const GradientHighlight = styled.span`
   color: ${props => props.theme.colors.white};
   background-image: ${props => props.theme.colors.gradient};
-  border: 0.025em solid ${props => props.theme.colors.gradientSecond};
   border-radius: 0.1em;
   padding: 0.4em 0.8em;
 `;
