@@ -30,6 +30,7 @@ class Layout extends Component {
       initGA();
       window.GA_INITIALIZED = true;
     }
+    console.log("isDarkMode:", isDarkMode());
   }
   render() {
     const { children, title } = this.props;
