@@ -6,7 +6,7 @@ import styled, { ThemeProvider } from "styled-components";
 import theme from "../static/theme";
 import TypewriterContainer from "../containers/TypewriterContainer";
 import Footer from "../components/Footer";
-import { initGA } from "../utils/analytics";
+import { initGA, logPageView } from "../utils/analytics";
 
 const PageContainer = styled.div`
   display: flex;
@@ -29,6 +29,7 @@ class Layout extends Component {
       initGA();
       window.GA_INITIALIZED = true;
     }
+    logPageView();
   }
 
   render() {
