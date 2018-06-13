@@ -6,21 +6,25 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import brands from "@fortawesome/fontawesome-free-brands";
 import solid from "@fortawesome/fontawesome-free-solid";
 
-const LogoContainer = styled.div`
-  font-size: 2em;
-  font-weight: bold;
+const GradientContainer = styled.div`
   margin: 1em 0;
-`;
-
-const LogoLink = styled.a`
-  text-decoration: none;
-`;
-
-const GradientHighlight = styled.span`
   color: ${props => props.theme.colors.white};
   background-image: ${props => props.theme.colors.gradient};
   border-radius: 0.1em;
   padding: 0.4em 0.8em;
+  font-size: 2em;
+  font-weight: bold;
+  display: inline-block;
+
+  @media (max-width: 550px) {
+    word-break: break-all;
+    display: block;
+  }
+`;
+
+const LogoLink = styled.a`
+  text-decoration: none;
+  color: ${props => props.theme.colors.white};
 `;
 
 const blinkAnimation = keyframes`
@@ -48,20 +52,18 @@ class Typewriter extends Component {
   render() {
     const { currentIcon, currentLink, currentText } = this.props;
     return (
-      <LogoContainer>
-        <LogoLink
-          href={currentLink}
-          onClick={() => this.handleClick(currentLink)}
-        >
-          <GradientHighlight>
-            {currentIcon && (
-              <StyledFontAwesomeIcon icon={currentIcon} size="xs" />
-            )}
-            {currentText}
-            <Blink>_</Blink>
-          </GradientHighlight>
-        </LogoLink>
-      </LogoContainer>
+      <LogoLink
+        href={currentLink}
+        onClick={() => this.handleClick(currentLink)}
+      >
+        <GradientContainer>
+          {currentIcon && (
+            <StyledFontAwesomeIcon icon={currentIcon} size="xs" />
+          )}
+          <span>{currentText}</span>
+          <Blink>_</Blink>
+        </GradientContainer>
+      </LogoLink>
     );
   }
 }
