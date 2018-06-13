@@ -1,5 +1,5 @@
 const DARK_MODE_START_HOUR = 22;
-const DARK_MODE_END_HOUR = 7;
+const DARK_MODE_END_HOUR = 10;
 
 const isDarkMode = () => {
   const time = new Date();
