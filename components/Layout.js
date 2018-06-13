@@ -23,18 +23,7 @@ const HeaderContainer = styled.div`
   margin-bottom: 3em;
 `;
 
-const DARK_MODE_START_HOUR = 22;
-const DARK_MODE_END_HOUR = 10;
-
-const isDarkMode = () => {
-  const time = new Date();
-  const hours = time.getHours();
-  return hours >= DARK_MODE_START_HOUR || hours < DARK_MODE_END_HOUR;
-};
-
 class Layout extends Component {
-  state = { isDarkMode: isDarkMode() };
-
   componentDidMount() {
     if (!window.GA_INITIALIZED) {
       initGA();
@@ -43,14 +32,13 @@ class Layout extends Component {
   }
 
   render() {
-    console.log(this.state.isDarkMode);
     const { children, title } = this.props;
     return (
       <div>
         <Head>
           <title>{title}</title>
         </Head>
-        <ThemeProvider theme={this.state.isDarkMode ? theme.dark : theme.day}>
+        <ThemeProvider theme={theme.day}>
           <PageContainer>
             <ChildrenContainer>
               <HeaderContainer>
