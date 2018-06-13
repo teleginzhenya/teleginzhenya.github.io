@@ -19,10 +19,6 @@ const ChildrenContainer = styled.div`
   margin: 0 2em;
 `;
 
-const HeaderContainer = styled.div`
-  margin-bottom: 3em;
-`;
-
 class Layout extends Component {
   componentDidMount() {
     if (!window.GA_INITIALIZED) {
@@ -42,9 +38,7 @@ class Layout extends Component {
         <ThemeProvider theme={theme.day}>
           <PageContainer>
             <ChildrenContainer>
-              <HeaderContainer>
-                <TypewriterContainer />
-              </HeaderContainer>
+              <TypewriterContainer />
               {children}
               <Footer />
             </ChildrenContainer>
