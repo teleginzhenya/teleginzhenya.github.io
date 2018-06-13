@@ -29,7 +29,11 @@ const CONTENT = [
     text: "@zhenyatelegin",
     link: "http://telegram.me/zhenyatelegin"
   },
-  { icon: ["fas", "envelope"], text: "telegin.zhenya@gmail.com" }
+  {
+    icon: ["fas", "envelope"],
+    text: "telegin.zhenya@gmail.com",
+    link: "mailto:telegin.zhenya@gmail.com"
+  }
 ];
 
 class LogoContainer extends Component {
