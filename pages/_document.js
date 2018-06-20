@@ -4,7 +4,6 @@ import { ServerStyleSheet } from "styled-components";
 
 import favicons from "../static/favicons";
 import theme from "../static/theme";
-import { isDarkMode } from "../utils/isDarkMode";
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -30,18 +29,6 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Ubuntu+Mono"
             rel="stylesheet"
           />
-          <style>
-            {`
-              body {
-                margin: 0;
-                background: ${
-                  isDarkMode()
-                    ? theme.dark.colors.backgroundColor
-                    : theme.day.colors.backgroundColor
-                };
-              }
-            `}
-          </style>
           <style
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
