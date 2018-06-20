@@ -7,6 +7,7 @@ import theme from "../static/theme";
 import TypewriterContainer from "../containers/TypewriterContainer";
 import Footer from "../components/Footer";
 import { initGA, logPageView } from "../utils/analytics";
+import { isDarkMode } from "../utils/isDarkMode";
 
 const PageContainer = styled.div`
   display: flex;
@@ -20,12 +21,21 @@ const ChildrenContainer = styled.div`
 `;
 
 class Layout extends Component {
+  state = {
+    isDarkMode: false
+  };
+
   componentDidMount() {
     if (!window.GA_INITIALIZED) {
       initGA();
       window.GA_INITIALIZED = true;
     }
     logPageView();
+
+    // eslint-disable-next-line react/no-did-mount-set-state
+    this.setState({
+      isDarkMode: isDarkMode()
+    });
   }
 
   render() {
@@ -34,8 +44,20 @@ class Layout extends Component {
       <div>
         <Head>
           <title>{title}</title>
+          <style global>
+            {`
+          body {
+            margin: 0;
+            background: ${
+              this.state.isDarkMode
+                ? theme.dark.colors.backgroundColor
+                : theme.day.colors.backgroundColor
+            };
+          }
+          `}
+          </style>
         </Head>
-        <ThemeProvider theme={theme.day}>
+        <ThemeProvider theme={this.state.isDarkMode ? theme.dark : theme.day}>
           <PageContainer>
             <ChildrenContainer>
               <TypewriterContainer />
