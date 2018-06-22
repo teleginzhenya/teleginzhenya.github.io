@@ -40,7 +40,6 @@ class StackCardContainer extends Component {
 
     const cards = Object.assign({}, cardsArray);
 
-    console.log("CARDSS", cards);
     this.setState({ cards, cardsArray, topCardIndex: cardsArray.length - 1 });
   };
 
@@ -75,13 +74,11 @@ class StackCardContainer extends Component {
 
         setTimeout(() => {
           this.setState({ cards: Object.assign({}, updatedCards) }, () => {
-            setTimeout(() => {
-              this.setState({
-                topCardIndex:
-                  topCardIndex === 0 ? cardsArray.length - 1 : topCardIndex - 1,
-                bottomCardIndex: topCardIndex,
-                disabled: false
-              });
+            this.setState({
+              topCardIndex:
+                topCardIndex === 0 ? cardsArray.length - 1 : topCardIndex - 1,
+              bottomCardIndex: topCardIndex,
+              disabled: false
             });
           });
         }, animationDuration);
