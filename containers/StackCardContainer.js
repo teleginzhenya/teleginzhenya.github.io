@@ -90,42 +90,48 @@ class StackCardContainer extends Component {
     const { cards, cardsArray, topCardIndex, bottomCardIndex } = this.state;
     const { cardShift, animationDuration } = this.props;
 
+    const updatedCards = cardsArray.map(
+      (card, index) =>
+        index === bottomCardIndex
+          ? {
+              ...cards[topCardIndex],
+              translateX: -1 * cardShift,
+              zIndex: cards[bottomCardIndex].zIndex
+            }
+          : {
+              ...cards[index === 0 ? cardsArray.length - 1 : index - 1],
+              translateX: 0
+            }
+    );
+
     this.setState(
       {
         disabled: true,
-        cards: {
-          ...cards,
-          [bottomCardIndex]: {
-            ...cards[bottomCardIndex],
-            translateX: -1 * cardShift
-          }
-        }
+        cards: Object.assign({}, updatedCards)
       },
       () => {
-        const updatedCards = cardsArray.map(
-          (card, index) =>
-            index === bottomCardIndex
-              ? {
-                  ...cards[topCardIndex],
-                  translateX: 0
-                }
-              : {
-                  ...cards[index === 0 ? cardsArray.length - 1 : index - 1],
-                  translateX: 0
-                }
-        );
-
         setTimeout(() => {
-          this.setState({ cards: Object.assign({}, updatedCards) }, () => {
-            this.setState({
-              topCardIndex: bottomCardIndex,
-              bottomCardIndex:
-                bottomCardIndex === cardsArray.length - 1
-                  ? 0
-                  : bottomCardIndex + 1,
-              disabled: false
-            });
-          });
+          this.setState(
+            {
+              cards: {
+                ...this.state.cards,
+                [bottomCardIndex]: {
+                  ...this.state.cards[bottomCardIndex],
+                  translateX: 0,
+                  zIndex: cardsArray.length
+                }
+              }
+            },
+            () =>
+              this.setState({
+                topCardIndex: bottomCardIndex,
+                bottomCardIndex:
+                  bottomCardIndex === cardsArray.length - 1
+                    ? 0
+                    : bottomCardIndex + 1,
+                disabled: false
+              })
+          );
         }, animationDuration);
       }
     );
@@ -152,12 +158,14 @@ class StackCardContainer extends Component {
           maxVisibleCards={transformScaleStep}
           animationDuration={animationDuration}
         />
-        <button onClick={this.handlePreviousButtonClick} disabled={disabled}>
-          previous
-        </button>
-        <button onClick={this.handleNextButtonClick} disabled={disabled}>
-          next
-        </button>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <button onClick={this.handlePreviousButtonClick} disabled={disabled}>
+            previous
+          </button>
+          <button onClick={this.handleNextButtonClick} disabled={disabled}>
+            next
+          </button>
+        </div>
       </div>
     );
   }
