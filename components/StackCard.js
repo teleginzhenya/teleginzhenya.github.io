@@ -8,7 +8,7 @@ const Card = styled.div`
 
   border-radius: 5px;
   position: absolute;
-  transition: ${p => `all ${p.animationDuration}ms;`};
+  transition: ${p => `all ${p.animationDuration}ms ease-in-out;`};
   transform-origin: 50% -50%;
 
   ${p => `z-index: ${p.zIndex};`};
@@ -48,24 +48,24 @@ const StackCard = ({
     height={height}
     cardsAmount={cardsArray ? cardsArray.length : 0}
     paddingTop={
-        // eslint-disable-next-line no-restricted-properties
-        height * Math.pow(transformScaleStep, maxVisibleCards) - height
-      }
+      // eslint-disable-next-line no-restricted-properties
+      height * Math.pow(transformScaleStep, maxVisibleCards) - height
+    }
   >
     {cardsArray &&
-        cardsArray.map((card, index) => (
-          <Card
-            {...cards[index]}
-            width={width}
-            height={height}
-            key={card.children.key}
-            animationDuration={animationDuration}
-          >
-            {card.children}
-          </Card>
-        ))}
+      cardsArray.map((card, index) => (
+        <Card
+          {...cards[index]}
+          width={width}
+          height={height}
+          key={card.children.key}
+          animationDuration={animationDuration}
+        >
+          {card.children}
+        </Card>
+      ))}
   </CardContainer>
-  );
+);
 
 StackCard.propTypes = {
   cardsArray: PropTypes.arrayOf(PropTypes.object),
