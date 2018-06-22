@@ -42,20 +42,17 @@ const StackCard = ({
   transformScaleStep,
   maxVisibleCards,
   animationDuration
-}) => {
-  console.log("cards", cards);
-  console.log("cardsArray", cardsArray);
-  return (
-    <CardContainer
-      width={width}
-      height={height}
-      cardsAmount={cardsArray ? cardsArray.length : 0}
-      paddingTop={
+}) => (
+  <CardContainer
+    width={width}
+    height={height}
+    cardsAmount={cardsArray ? cardsArray.length : 0}
+    paddingTop={
         // eslint-disable-next-line no-restricted-properties
         height * Math.pow(transformScaleStep, maxVisibleCards) - height
       }
-    >
-      {cardsArray &&
+  >
+    {cardsArray &&
         cardsArray.map((card, index) => (
           <Card
             {...cards[index]}
@@ -67,9 +64,8 @@ const StackCard = ({
             {card.children}
           </Card>
         ))}
-    </CardContainer>
+  </CardContainer>
   );
-};
 
 StackCard.propTypes = {
   cardsArray: PropTypes.arrayOf(PropTypes.object),
