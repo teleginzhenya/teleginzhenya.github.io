@@ -42,5 +42,19 @@ BSc Computer Systems and Software Engineering <small>(3.67 Overall GPA)</small>
 [Telegram](http://telegram.me/zhenyatelegin)
 `;
 
+const PRINTANI_MARKDOWN = `
+## Printani
+
+It is a service for printing photos from personal computer, mobile phone and Instagram with various settings such as material, papersize, delivery or pick up from point. It also includes admin panel for managing orders and delivery.
+
+## Technology stack
+
+- <span>React</span> <span>Redux</span> <span>Next.js</span> <span>Firebase</span> <span>ePay</span> <span>antd</span> <span>styled-components</span>
+
+## Links
+
+[printani.kz](https://www.printani.kz/)
+`;
+
 // eslint-disable-next-line import/prefer-default-export
-export { HOME_MARKDOWN };
+export { HOME_MARKDOWN, PRINTANI_MARKDOWN };
