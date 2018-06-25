@@ -2,20 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Card = styled.div`
+const Card = styled.div.attrs({
+  style: p => ({
+    zIndex: p.zIndex,
+    transform: `translateX(${p.translateX}px) scale(${p.transformScale})`,
+    opacity: p.opacity,
+    boxShadow: p.boxShadow
+  })
+})`
   width: ${p => (p.width ? `${p.width}px` : "100%")};
   height: ${p => (p.height ? `${p.height}px` : "100%")};
+  transition: ${p => `all ${p.animationDuration}ms ease-in-out;`};
 
   border-radius: 5px;
   position: absolute;
-  transition: ${p => `all ${p.animationDuration}ms ease-in-out;`};
   transform-origin: 50% -50%;
-
-  ${p => `z-index: ${p.zIndex};`};
-  ${p =>
-    `transform: translateX(${p.translateX}px) scale(${p.transformScale});`};
-  ${p => p.opacity && `opacity: ${p.opacity};`};
-  ${p => p.boxShadow && `box-shadow: ${p.boxShadow};`};
 
   & > * {
     width: 100%;
