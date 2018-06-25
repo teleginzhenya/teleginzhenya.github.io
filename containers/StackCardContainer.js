@@ -1,12 +1,38 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import StackCard from "../components/StackCard";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 18px;
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin-top: 16px;
+`;
+
+const ControlButton = styled.a`
+  color: ${props => props.theme.colors.fontColor};
+  text-decoration: underline;
+  text-decoration-color: ${props => props.theme.colors.primaryColor};
+  :hover {
+    font-weight: bold;
+    cursor: pointer;
+  }
+`;
 
 class StackCardContainer extends Component {
   state = {
     cards: {},
     topCardIndex: 0,
+    currentIndex: 1,
     bottomCardIndex: 0,
     disabled: false
   };
@@ -44,7 +70,13 @@ class StackCardContainer extends Component {
   };
 
   handleNextButtonClick = () => {
-    const { cards, cardsArray, topCardIndex, bottomCardIndex } = this.state;
+    const {
+      cards,
+      cardsArray,
+      topCardIndex,
+      bottomCardIndex,
+      currentIndex
+    } = this.state;
     const { cardShift, animationDuration } = this.props;
 
     this.setState(
@@ -78,7 +110,8 @@ class StackCardContainer extends Component {
               topCardIndex:
                 topCardIndex === 0 ? cardsArray.length - 1 : topCardIndex - 1,
               bottomCardIndex: topCardIndex,
-              disabled: false
+              disabled: false,
+              currentIndex: (currentIndex % cardsArray.length) + 1
             });
           });
         }, animationDuration);
@@ -87,7 +120,13 @@ class StackCardContainer extends Component {
   };
 
   handlePreviousButtonClick = () => {
-    const { cards, cardsArray, topCardIndex, bottomCardIndex } = this.state;
+    const {
+      cards,
+      cardsArray,
+      topCardIndex,
+      bottomCardIndex,
+      currentIndex
+    } = this.state;
     const { cardShift, animationDuration } = this.props;
 
     const updatedCards = cardsArray.map(
@@ -129,7 +168,8 @@ class StackCardContainer extends Component {
                   bottomCardIndex === cardsArray.length - 1
                     ? 0
                     : bottomCardIndex + 1,
-                disabled: false
+                disabled: false,
+                currentIndex: currentIndex === 1 ? 4 : currentIndex - 1
               })
           );
         }, animationDuration);
@@ -138,7 +178,7 @@ class StackCardContainer extends Component {
   };
 
   render() {
-    const { cardsArray, cards, disabled } = this.state;
+    const { cardsArray, cards, disabled, currentIndex } = this.state;
     const {
       maxVisibleCards,
       transformScaleStep,
@@ -148,7 +188,7 @@ class StackCardContainer extends Component {
     } = this.props;
 
     return (
-      <div>
+      <Container>
         <StackCard
           cardsArray={cardsArray}
           cards={cards}
@@ -158,15 +198,20 @@ class StackCardContainer extends Component {
           maxVisibleCards={transformScaleStep}
           animationDuration={animationDuration}
         />
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <button onClick={this.handlePreviousButtonClick} disabled={disabled}>
-            previous
-          </button>
-          <button onClick={this.handleNextButtonClick} disabled={disabled}>
-            next
-          </button>
-        </div>
-      </div>
+        <ButtonsContainer>
+          <ControlButton
+            onClick={!disabled ? this.handlePreviousButtonClick : null}
+          >
+            {"<"} prev
+          </ControlButton>
+          {currentIndex}/{React.Children.toArray(this.props.children).length}
+          <ControlButton
+            onClick={!disabled ? this.handleNextButtonClick : null}
+          >
+            next {">"}
+          </ControlButton>
+        </ButtonsContainer>
+      </Container>
     );
   }
 }
