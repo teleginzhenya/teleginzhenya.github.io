@@ -169,7 +169,8 @@ class StackCardContainer extends Component {
                     ? 0
                     : bottomCardIndex + 1,
                 disabled: false,
-                currentIndex: currentIndex === 1 ? 4 : currentIndex - 1
+                currentIndex:
+                  currentIndex === 1 ? cardsArray.length : currentIndex - 1
               })
           );
         }, animationDuration);
