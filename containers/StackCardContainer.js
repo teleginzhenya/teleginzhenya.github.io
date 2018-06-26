@@ -55,10 +55,7 @@ class StackCardContainer extends Component {
             ? 1 - transformScaleStep * index
             : 1 - transformScaleStep * (maxVisibleCards - 1),
         translateX: 0,
-        opacity:
-          index < maxVisibleCards
-            ? 1 - opacityStep * index
-            : 1 - opacityStep * (maxVisibleCards - 1),
+        opacity: index < maxVisibleCards ? 1 - opacityStep * index : 0,
         boxShadow: index < maxVisibleCards && shadow,
         children
       }))
