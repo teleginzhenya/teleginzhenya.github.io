@@ -49,7 +49,7 @@ class CardPage extends React.Component {
     const cardsWidth =
       this.props.size.width > 640 ? 640 : this.props.size.width - 32;
     return (
-      <Layout title="Printani — Evgeniy Telegin" logoHomeLink>
+      <Layout title="Printani — Evgeniy Telegin" isLogoHomeLink>
         <StackCardContainer
           width={cardsWidth}
           height={cardsWidth / RATIO}
