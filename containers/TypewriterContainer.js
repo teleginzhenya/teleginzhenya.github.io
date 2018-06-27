@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import Typewriter from "../components/Typewriter";
 import { logEvent } from "../utils/analytics";
@@ -36,7 +37,7 @@ const CONTENT = [
   }
 ];
 
-class LogoContainer extends Component {
+class TypewriterContainer extends Component {
   state = { currentIcon: null, currentText: "", currentLink: null };
 
   componentDidMount() {
@@ -123,8 +124,18 @@ class LogoContainer extends Component {
   };
 
   render() {
-    return <Typewriter {...this.state} onClick={this.handleClick} />;
+    return (
+      <Typewriter
+        {...this.state}
+        onClick={this.handleClick}
+        isLogoHomeLink={this.props.isLogoHomeLink}
+      />
+    );
   }
 }
 
-export default LogoContainer;
+TypewriterContainer.propTypes = {
+  isLogoHomeLink: PropTypes.bool.isRequired
+};
+
+export default TypewriterContainer;
