@@ -50,10 +50,15 @@ class Typewriter extends Component {
   };
 
   render() {
-    const { currentIcon, currentLink, currentText } = this.props;
+    const {
+      currentIcon,
+      currentLink,
+      currentText,
+      isLogoHomeLink
+    } = this.props;
     return (
       <LogoLink
-        href={currentLink}
+        href={isLogoHomeLink ? "/" : currentLink}
         onClick={() => this.handleClick(currentLink)}
       >
         <GradientContainer>
@@ -72,7 +77,8 @@ Typewriter.propTypes = {
   currentIcon: PropTypes.arrayOf(PropTypes.string),
   currentLink: PropTypes.string,
   currentText: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  isLogoHomeLink: PropTypes.bool.isRequired
 };
 
 Typewriter.defaultProps = {
