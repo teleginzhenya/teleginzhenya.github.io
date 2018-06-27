@@ -22,6 +22,7 @@ const ControlButton = styled.a`
   color: ${props => props.theme.colors.fontColor};
   text-decoration: underline;
   text-decoration-color: ${props => props.theme.colors.primaryColor};
+  user-select: none;
   :hover {
     font-weight: bold;
     cursor: pointer;
