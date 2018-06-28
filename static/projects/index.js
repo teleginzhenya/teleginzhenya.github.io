@@ -2,7 +2,7 @@ const printani = {
   path: "printani",
   name: "Printani",
   markdown: `
-## Printaniwka
+## Printani
 
 It is a service for printing photos from personal computer, mobile phone and Instagram with various settings such as material, papersize, delivery or pick up from point. It also includes admin panel for managing orders and delivery.
 
