@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withSize } from "react-sizeme";
 import { withRouter } from "next/router";
-import { isDarkMode } from "../utils/isDarkMode";
-import StackCardContainer from "../containers/StackCardContainer";
 
-import Markdown from "../components/Markdown";
 import Layout from "../components/Layout";
+import Markdown from "../components/Markdown";
+import StackCardContainer from "../containers/StackCardContainer";
+import { isDarkMode } from "../utils/isDarkMode";
 
 class Project extends React.Component {
   static getDerivedStateFromProps() {
