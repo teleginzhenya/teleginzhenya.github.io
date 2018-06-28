@@ -44,7 +44,7 @@ class Layout extends Component {
       <div>
         <Head>
           <title>{title}</title>
-          <style global>
+          <style global="true">
             {`
           body {
             margin: 0;
