@@ -12,6 +12,7 @@ const Container = styled.div`
 `;
 
 const ButtonsContainer = styled.div`
+  color: ${props => props.theme.colors.fontColor};
   display: flex;
   justify-content: space-between;
   width: 150px;
