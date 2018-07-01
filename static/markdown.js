@@ -33,7 +33,7 @@ BSc Computer Systems and Software Engineering <small>(3.67 Overall GPA)</small>
 
 - 3<sup>rd</sup> place on **HalykFinTech Hackathon** (Feb 2016)
 - 4<sup>th</sup> place on **MegaAlmaty Hackathon** (Feb 2016)
-- Participated in **Hacktoberfest 2017**
+- Participated in [Hacktoberfest 2017](https://hacktoberfest.digitalocean.com/) (Oct 2017)
 
 ## Links
 
