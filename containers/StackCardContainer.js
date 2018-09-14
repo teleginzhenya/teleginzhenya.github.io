@@ -20,13 +20,17 @@ const ButtonsContainer = styled.div`
 `;
 
 const ControlButton = styled.a`
+  position: relative;
   color: ${props => props.theme.colors.fontColor};
-  text-decoration: underline;
-  text-decoration-color: ${props => props.theme.colors.primaryColor};
+  text-decoration: none;
+  border-bottom: 1px dotted ${props => props.theme.colors.primaryColor};
   user-select: none;
   :hover {
     font-weight: bold;
     cursor: pointer;
+  }
+  :active {
+    top: 2px;
   }
 `;
 
