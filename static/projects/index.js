@@ -8,7 +8,7 @@ It is a service for printing photos from personal computer, mobile phone and Ins
 
 ## Technology stack
 
-- <span>React</span> <span>Redux</span> <span>Next.js</span> <span>Firebase</span> <span>ePay</span> <span>antd</span> <span>styled-components</span>
+<span>React</span> <span>Redux</span> <span>Next.js</span> <span>Firebase</span> <span>ePay</span> <span>antd</span> <span>styled-components</span>
 
 ## Links
 
