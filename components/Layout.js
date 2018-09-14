@@ -39,7 +39,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, title, isLogoHomeLink } = this.props;
+    const { children, title, isHomeLink } = this.props;
     return (
       <div>
         <Head>
@@ -60,7 +60,7 @@ class Layout extends Component {
         <ThemeProvider theme={this.state.isDarkMode ? theme.dark : theme.day}>
           <PageContainer>
             <ChildrenContainer>
-              <TypewriterContainer isLogoHomeLink={isLogoHomeLink} />
+              <TypewriterContainer isHomeLink={isHomeLink} />
               {children}
               <Footer />
             </ChildrenContainer>
@@ -74,12 +74,12 @@ class Layout extends Component {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
-  isLogoHomeLink: PropTypes.bool
+  isHomeLink: PropTypes.bool
 };
 
 Layout.defaultProps = {
   title: "teleginzhenya.github.io",
-  isLogoHomeLink: false
+  isHomeLink: false
 };
 
 export default Layout;
