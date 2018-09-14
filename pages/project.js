@@ -32,7 +32,7 @@ class Project extends React.Component {
     return (
       <Layout
         title={`${project.name} — Evgeniy Telegin`}
-        isLogoHomeLink
+        isHomeLink
         isDarkMode={this.state.isDarkMode}
       >
         <StackCardContainer
