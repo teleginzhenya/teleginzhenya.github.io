@@ -38,7 +38,7 @@ const CONTENT = [
 ];
 
 class TypewriterContainer extends Component {
-  state = { currentIcon: null, currentText: "", currentLink: null };
+  state = { icon: null, text: "", link: null };
 
   componentDidMount() {
     this.startTypingAnimation(0, 0);
@@ -46,29 +46,19 @@ class TypewriterContainer extends Component {
 
   startTypingAnimation = (wordIndex, symbolIndex) => {
     setTimeout(() => {
-      if (
-        symbolIndex === 0 &&
-        CONTENT[wordIndex].icon &&
-        !this.state.currentIcon
-      ) {
+      if (symbolIndex === 0 && CONTENT[wordIndex].icon && !this.state.icon) {
         this.setState(
           {
-            currentIcon: CONTENT[wordIndex].icon,
-            currentLink: CONTENT[wordIndex].link
-              ? CONTENT[wordIndex].link
-              : null
+            icon: CONTENT[wordIndex].icon,
+            link: CONTENT[wordIndex].link ? CONTENT[wordIndex].link : null
           },
           () => this.startTypingAnimation(wordIndex, symbolIndex)
         );
       } else {
         this.setState(
           {
-            currentText: `${this.state.currentText}${
-              CONTENT[wordIndex].text[symbolIndex]
-            }`,
-            currentLink: CONTENT[wordIndex].link
-              ? CONTENT[wordIndex].link
-              : null
+            text: `${this.state.text}${CONTENT[wordIndex].text[symbolIndex]}`,
+            link: CONTENT[wordIndex].link ? CONTENT[wordIndex].link : null
           },
           () => {
             if (symbolIndex < CONTENT[wordIndex].text.length - 1) {
@@ -86,24 +76,16 @@ class TypewriterContainer extends Component {
     setTimeout(() => {
       this.setState(
         {
-          currentText: this.state.currentText.slice(0, -1),
-          currentIcon:
-            this.state.currentText.length === 0 ? null : this.state.currentIcon,
-          currentLink:
-            this.state.currentText.length === 0 ? null : this.state.currentLink
+          text: this.state.text.slice(0, -1),
+          icon: this.state.text.length === 0 ? null : this.state.icon,
+          link: this.state.text.length === 0 ? null : this.state.link
         },
         () => {
-          if (this.state.currentText.length !== 0) {
+          if (this.state.text.length !== 0) {
             this.startBackspaceAnimation(wordIndex);
-          } else if (
-            this.state.currentText.length === 0 &&
-            this.state.currentIcon
-          ) {
+          } else if (this.state.text.length === 0 && this.state.icon) {
             this.startBackspaceAnimation(wordIndex);
-          } else if (
-            wordIndex < CONTENT.length - 1 &&
-            !this.state.currentIcon
-          ) {
+          } else if (wordIndex < CONTENT.length - 1 && !this.state.icon) {
             setTimeout(
               () => this.startTypingAnimation(wordIndex + 1, 0),
               DELAY_BETWEEN_WORDS
@@ -128,14 +110,14 @@ class TypewriterContainer extends Component {
       <Typewriter
         {...this.state}
         onClick={this.handleClick}
-        isLogoHomeLink={this.props.isLogoHomeLink}
+        isHomeLink={this.props.isHomeLink}
       />
     );
   }
 }
 
 TypewriterContainer.propTypes = {
-  isLogoHomeLink: PropTypes.bool.isRequired
+  isHomeLink: PropTypes.bool.isRequired
 };
 
 export default TypewriterContainer;
