@@ -16,10 +16,15 @@ const StyledHearth = styled(FontAwesomeIcon)`
 `;
 
 const A = styled.a`
+  position: relative;
   color: ${props => props.theme.colors.fontColor};
-  text-decoration-color: ${props => props.theme.colors.primaryColor};
+  text-decoration: none;
+  border-bottom: dotted 1px ${props => props.theme.colors.primaryColor};
   :hover {
     font-weight: bold;
+  }
+  :active {
+    top: 2px;
   }
 `;
 
