@@ -23,6 +23,8 @@ const MarkdownStyles = styled(ReactMarkdown)`
       width: 1em;
       left: -1em;
       color: inherit;
+      text-decoration: none;
+      border-bottom: none;
     }
   }
 
@@ -55,10 +57,15 @@ const MarkdownStyles = styled(ReactMarkdown)`
   }
 
   a {
+    position: relative;
     color: ${props => props.theme.colors.fontColor};
-    text-decoration-color: ${props => props.theme.colors.primaryColor};
+    text-decoration: none;
+    border-bottom: dotted 1px ${props => props.theme.colors.primaryColor};
     :hover {
       font-weight: bold;
+    }
+    :active {
+      top: 2px;
     }
   }
 `;
