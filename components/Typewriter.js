@@ -50,22 +50,15 @@ class Typewriter extends Component {
   };
 
   render() {
-    const {
-      currentIcon,
-      currentLink,
-      currentText,
-      isLogoHomeLink
-    } = this.props;
+    const { icon, link, text, isHomeLink } = this.props;
     return (
       <LogoLink
-        href={isLogoHomeLink ? "/" : currentLink}
-        onClick={() => this.handleClick(currentLink)}
+        href={isHomeLink ? "/" : link}
+        onClick={() => this.handleClick(link)}
       >
         <GradientContainer>
-          {currentIcon && (
-            <StyledFontAwesomeIcon icon={currentIcon} size="xs" />
-          )}
-          <span>{currentText}</span>
+          {icon && <StyledFontAwesomeIcon icon={icon} size="xs" />}
+          <span>{text}</span>
           <Blink>_</Blink>
         </GradientContainer>
       </LogoLink>
@@ -74,17 +67,17 @@ class Typewriter extends Component {
 }
 
 Typewriter.propTypes = {
-  currentIcon: PropTypes.arrayOf(PropTypes.string),
-  currentLink: PropTypes.string,
-  currentText: PropTypes.string,
+  icon: PropTypes.arrayOf(PropTypes.string),
+  link: PropTypes.string,
+  text: PropTypes.string,
   onClick: PropTypes.func,
-  isLogoHomeLink: PropTypes.bool.isRequired
+  isHomeLink: PropTypes.bool.isRequired
 };
 
 Typewriter.defaultProps = {
-  currentIcon: null,
-  currentLink: null,
-  currentText: null,
+  icon: null,
+  link: null,
+  text: null,
   onClick: () => {}
 };
 
