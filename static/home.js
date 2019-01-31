@@ -1,13 +1,17 @@
 const HOME_MARKDOWN = `
 ## About me
 
-Hi there! 👋 My name is **Evgeniy Telegin**.
+Hi there! 👋 My name is **Evgeniy**.
 
 I am ambitious and fast learning developer. Valuable team member. I love new technologies and services, as well as start-ups and technical products. Attentive to details and active person. Motivated to learn and hard working.
 
 ## Experience
 
-#### Nov 2016 - Present (Almaty, Kazakhstan)
+#### Feb 2018 - Present (Saint Petersburg, Russia)
+
+### Frontend developer at Yandex.Money
+
+#### Nov 2016 - Feb 2018 (Almaty, Kazakhstan)
 
 ### Web & Mobile Developer at Intellection Startup Center
 
@@ -48,7 +52,8 @@ BSc Computer Systems and Software Engineering <small>(3.65 Overall GPA)</small>
 [GitHub](https://github.com/teleginzhenya)
 [LinkedIn](https://www.linkedin.com/in/evgeniytelegin/)
 [Telegram](http://telegram.me/zhenyatelegin)
+[Twitter](https://twitter.com/teleginzhenya)
+[Medium](https://medium.com/@telegin.zhenya)
 `;
 
-// eslint-disable-next-line import/prefer-default-export
-export { HOME_MARKDOWN };
+export default HOME_MARKDOWN;
