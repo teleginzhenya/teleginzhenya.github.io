@@ -34,6 +34,10 @@ const MarkdownStyles = styled(ReactMarkdown)`
     color: ${props => props.theme.colors.fontColor};
   }
 
+  p {
+    line-height: 1.5;
+  }
+
   h4 {
     color: ${props => props.theme.colors.grey};
   }
@@ -41,10 +45,10 @@ const MarkdownStyles = styled(ReactMarkdown)`
   ul {
     padding-left: 1em;
     li {
-      line-height: 150%;
+      line-height: 1.5;
       margin-top: 0.5em;
       :last-child {
-        line-height: 185%;
+        line-height: 1.85;
       }
     }
   }
@@ -81,7 +85,7 @@ function flatten(text, child) {
 const HeadingRenderer = props => {
   const children = React.Children.toArray(props.children);
   const text = children.reduce(flatten, "");
-  const slug = text.toLowerCase().replace(/\W/g, "");
+  const slug = text.replace(/\W/g, "");
 
   return React.createElement(`h${props.level}`, { id: slug }, [
     <a href={`#${slug}`} key={slug}>
