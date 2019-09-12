@@ -16,7 +16,7 @@ I am ambitious and fast learning developer. Valuable team member. I love new tec
 ### Web & Mobile Developer at Intellection Startup Center
 
 - Developed [“Wunder”](https://www.wunder.kz/) project, a online courses platform for schools, which helps to get into programming with various types of tasks (code judging, online compiler, quizzes, open questions, video and text lessons, etc.).
-- Developed [“Printani”](https://teleginzhenya.github.io/printani/), a service that helps to print photos with various settings.
+- Developed [“Printani”](https://teleginzhenya.github.io/printani), a service that helps to print photos with various settings.
 - Developed **mobile application for Invictus Fitness**, that manages queue for athletes in functional training zone.
 - Worked on development of **“Kazakh Adventure” project**, that helps tourists to find tour in Kazakhstan.
 - Participated in development of **Intellection Studio web site**, that represent the copmany and its services.
