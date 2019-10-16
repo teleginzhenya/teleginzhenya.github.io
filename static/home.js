@@ -11,6 +11,18 @@ I am ambitious and fast learning developer. Valuable team member. I love new tec
 
 ### Frontend developer at Yandex.Money
 
+- Translated [Nicholas C. Zakas: Why I've stopped exporting defaults from my JavaScript modules](https://humanwhocodes.com/blog/2019/01/stop-using-default-exports-javascript-module/) article to russian language for [devSchacht](https://github.com/devSchacht/translations/blob/f5e45e002e48051dcd34d1bf5fabd29b7d71e154/articles/nicholas-c-zakas-why-ive-stopped-exporting-defaults-from-my-javascript-modules/README.md)
+- Developed library for npm audit report in CI/CD, which fail builds depending on vulnerabilities.
+- Worked on A/B/C testing of Yandex.Money home page for unlogged users.
+- Made an internal speech about trends in frontend.
+- Worked with repost APIs and different metrics (Yandex.Metrika, Google Analytics, Google Tag Manager).
+- Worked on node libraries for communication between backend and frontend.
+- Worked on different settings for layout-service, layout-service is a service which is responsible for delivering consistent header and/or footer for all applications.
+- Developed [“WakeUp“](https://money.yandex.ru/wakeup) promo for inactive users, where they could get bonuses doing regular things, transfer, payments. 
+- Developed [“IronMoney“](https://money.yandex.ru/ironmoney) promo, a game which shows different functionality of Yandex.Money as quests (example: make a page for donations), doing which user recieves bonuses, achievements and reads funny comics.
+- Developed application form for new employees, where they can send their documents, scans, etc.
+- Worked on development of components that depends on theme for design system.
+
 #### Nov 2016 - Feb 2018 (Almaty, Kazakhstan)
 
 ### Web & Mobile Developer at Intellection Startup Center
@@ -24,7 +36,7 @@ I am ambitious and fast learning developer. Valuable team member. I love new tec
 - Developed and designed **“#KazakhstanMakesGood” mobile application** from scratch, that provides possibility to buy digital postcards in order to make a contribution to charity.
 - Developed **“PhoenixNews” mobile application**, a news aggregator where user can chose source of the news.
 - Developed a **backend service** that parses news from various sources.
-- <span>JavaScript</span> <span>Node.js</span> <span>React</span> <span>React Native</span> <span>Redux</span> <span>Swift</span> <span>MongoDB</span> <span>Firebase</span>
+- <span>JavaScript</span> <span>Node.js</span> <span>React</span> <span>React Native</span> <span>Svelte</span> <span>Redux</span> <span>Swift</span> <span>MongoDB</span> <span>Firebase</span>
 
 ## Education
 
@@ -46,6 +58,7 @@ BSc Computer Systems and Software Engineering <small>(3.65 Overall GPA)</small>
 - 4<sup>th</sup> place on **MegaAlmaty Hackathon** (Feb 2016)
 - Participated in [Hacktoberfest 2017](https://hacktoberfest.digitalocean.com/) (Oct 2017)
 - Participated in [Hacktoberfest 2018](https://hacktoberfest.digitalocean.com/) (Oct 2018)
+- Participated in [Hacktoberfest 2019](https://hacktoberfest.digitalocean.com/) (Oct 2019)
 
 ## Links
 
