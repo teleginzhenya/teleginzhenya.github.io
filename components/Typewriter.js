@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
-import fontawesome from "@fortawesome/fontawesome";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import brands from "@fortawesome/fontawesome-free-brands";
-import solid from "@fortawesome/fontawesome-free-solid";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {fab} from "@fortawesome/free-brands-svg-icons";
+import {fas} from '@fortawesome/free-solid-svg-icons'
 
 const GradientContainer = styled.div`
   margin: 1em 0;
@@ -42,7 +42,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   margin-right: 0.4em;
 `;
 
-fontawesome.library.add(brands, solid);
+library.add(fab, fas);
 
 class Typewriter extends Component {
   handleClick = currentLink => {

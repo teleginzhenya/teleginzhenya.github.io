@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
-import fontawesome from "@fortawesome/fontawesome";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import solid from "@fortawesome/fontawesome-free-solid";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {fas} from '@fortawesome/free-solid-svg-icons'
 
 const MarkdownStyles = styled(ReactMarkdown)`
   h2,
@@ -74,7 +74,7 @@ const MarkdownStyles = styled(ReactMarkdown)`
   }
 `;
 
-fontawesome.library.add(solid);
+library.add(fas);
 
 function flatten(text, child) {
   return typeof child === "string"

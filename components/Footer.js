@@ -1,7 +1,7 @@
 import React from "react";
-import fontawesome from "@fortawesome/fontawesome";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import faHeart from "@fortawesome/fontawesome-free-solid/faHeart";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faHeart} from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
@@ -28,11 +28,13 @@ const A = styled.a`
   }
 `;
 
-fontawesome.library.add(faHeart);
+library.add(faHeart);
 
 const Footer = () => (
   <FooterContainer style={{ textAlign: "center" }}>
-    Made with <StyledHearth icon="heart" size="xs" />
+    Made with 
+    {' '}
+    <StyledHearth icon="heart" size="xs" />
     {` in `}
     <A href="https://en.wikipedia.org/wiki/Almaty">Almaty</A>
   </FooterContainer>
