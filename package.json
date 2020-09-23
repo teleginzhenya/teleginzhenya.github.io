@@ -12,11 +12,16 @@
   "main": "index.js",
   "author": "teleginzhenya",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/teleginzhenya/teleginzhenya.github.io.git"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "next": "^9.5.3",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
