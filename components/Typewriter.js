@@ -46,7 +46,8 @@ library.add(fab, fas);
 
 class Typewriter extends Component {
   handleClick = currentLink => {
-    this.props.onClick(currentLink);
+    const {onClick} = this.props;
+    onClick(currentLink);
   };
 
   render() {

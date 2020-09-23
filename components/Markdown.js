@@ -83,15 +83,16 @@ function flatten(text, child) {
 }
 
 const HeadingRenderer = props => {
-  const children = React.Children.toArray(props.children);
+  const {children: propsChildren, level} = props;
+  const children = React.Children.toArray(propsChildren);
   const text = children.reduce(flatten, "");
   const slug = text.replace(/\W/g, "");
 
-  return React.createElement(`h${props.level}`, { id: slug }, [
+  return React.createElement(`h${level}`, { id: slug }, [
     <a href={`#${slug}`} key={slug}>
       <FontAwesomeIcon icon={["fas", "link"]} size="xs" />
     </a>,
-    props.children
+    propsChildren
   ]);
 };
 

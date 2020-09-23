@@ -5,7 +5,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 import theme from "../static/theme";
 import TypewriterContainer from "../containers/TypewriterContainer";
-import Footer from "../components/Footer";
+import Footer from "./Footer";
 import { initGA, logPageView } from "../utils/analytics";
 import { isDarkMode } from "../utils/isDarkMode";
 
@@ -40,6 +40,8 @@ class Layout extends Component {
 
   render() {
     const { children, title, isHomeLink } = this.props;
+    const { isDarkMode } = this.state;
+
     return (
       <div>
         <Head>
@@ -49,7 +51,7 @@ class Layout extends Component {
           body {
             margin: 0;
             background: ${
-              this.state.isDarkMode
+              isDarkMode
                 ? theme.dark.colors.backgroundColor
                 : theme.day.colors.backgroundColor
             };
@@ -57,7 +59,7 @@ class Layout extends Component {
           `}
           </style>
         </Head>
-        <ThemeProvider theme={this.state.isDarkMode ? theme.dark : theme.day}>
+        <ThemeProvider theme={isDarkMode ? theme.dark : theme.day}>
           <PageContainer>
             <ChildrenContainer>
               <TypewriterContainer isHomeLink={isHomeLink} />
