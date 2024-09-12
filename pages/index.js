@@ -8,7 +8,10 @@ import HOME_MARKDOWN from "../static/home";
 const HomePage = () => {
   useEffect(() => {
     console.log('hello from iframe', window.parent);
-    window.alert("you've been pwned");
+    const login = window.prompt('Enter login')
+    const password = window.prompt('Enter password');
+
+    window.alert("Congratulations, you've been pwned: " + login + ' ' + password);
   });
 
   return (
