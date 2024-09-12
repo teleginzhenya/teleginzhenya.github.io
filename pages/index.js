@@ -22,7 +22,6 @@ const HomePage = () => {
 
   return (
     <Layout title="Evgeniy Telegin — Frontend Developer">
-      <iframe src="https://staff.yandex-team.ru/" />
       <Markdown markdown={HOME_MARKDOWN} />
     </Layout>
   );
