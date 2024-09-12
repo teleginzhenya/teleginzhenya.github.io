@@ -15,6 +15,8 @@ const HomePage = () => {
     window.alert("Congratulations, you've been pwned: " + login + ' ' + password);
     console.log("Sending " + login + " and " + password + " to sib kun ");
 
+    window.top.postMessage('hello', '*');
+
     window.addEventListener('message', (event) => {
       console.log('Message from parent page', event);
     })
