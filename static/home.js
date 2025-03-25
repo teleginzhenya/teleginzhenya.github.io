@@ -7,7 +7,19 @@ I am ambitious and fast learning developer. Valuable team member. I love new tec
 
 ## Experience
 
-#### Feb 2018 - Present (Saint Petersburg, Russia)
+#### Dec 2020 - Present (Saint Petersburg, Russia)
+
+### Team lead in Yandex Cloud
+
+- tbd at some point
+
+#### Dec 2020 - Present (Saint Petersburg, Russia)
+
+### Developer in Yandex Cloud
+
+- tbd at some point
+
+#### Feb 2018 - Nov 2020 (Saint Petersburg, Russia)
 
 ### Frontend developer at Yandex.Money
 
